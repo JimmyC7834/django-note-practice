@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  <div class="col-md-4 my-5 w-auto">
+    <form action="" method="post" class="m-5">
+      {% csrf_token %}
+      <h3>Delete the following note?</h3>
+      <input class="btn btn-danger" type="submit" value="Confirm" />
+    </form>
+    <div class="card pt-4 px-4 rounded-0 shadow border-0">
+      <h4 class="card-title">{{ note.title }}</h4>
+      <div class="card-body">
+        <p>{{ note.text }}</p>
+      </div>
+    </div>
+  </div>
+{% endblock %}

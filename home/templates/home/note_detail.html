@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  <div class="col-md-4 my-5 w-auto">
+    <div class="card pt-4 px-4 rounded-0 shadow border-0">
+      <h4 class="card-title">
+        <a href="{% url 'note.list' %}" class="btn w-auto">←</a>
+        {{ note.title }}
+        <a href="{% url 'note.update' pk=note.id %}" class="btn w-auto">✏</a>
+        <a href="{% url 'note.delete' pk=note.id %}" class="btn w-auto">❌</a>
+      </h4>
+      <div class="card-body">
+        <p>{{ note.text }}</p>
+      </div>
+    </div>
+  </div>
+{% endblock %}

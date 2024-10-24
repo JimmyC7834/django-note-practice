@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  <div class="col-md-4 my-5 w-auto">
+    <div class="card pt-4 px-4 rounded-0 shadow border-0">
+      <h4 class="card-title">
+        <a href="{% url 'note.list' %}" class="btn w-auto">←</a>
+        New Note
+      </h4>
+      <form class="card-body" action="" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input class="btn btn-success" type="submit" value="Submit">
+      </form>
+    </div>
+  </div>
+{% endblock %}

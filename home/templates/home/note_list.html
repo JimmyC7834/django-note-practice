@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<h1 class="my-5 fs-1 font-weight-bold">
+  All Notes
+  <a href="{% url 'note.new' %}" class="btn w-auto">＋</a>
+</h1>
+<div class="col">
+  {% for note in notes %}
+  <div class="col-md-4 my-5 w-auto">
+    <div class="card pt-4 px-4 rounded-0 shadow border-0">
+      <a  href="{% url "note.details" pk=note.id %}" class="stretched-link"></a>
+      <h4 class="card-title">
+        {{ note.title }}
+      </h4>
+      <div class="card-body">
+        <p>
+          {{ note.text|truncatechars:16 }}
+        </p>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock %}
