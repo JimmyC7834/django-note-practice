@@ -1,1 +1,1 @@
-web: gunicorn 'django-note-practice.wsgi'
+web: gunicorn 'mynote.wsgi'
